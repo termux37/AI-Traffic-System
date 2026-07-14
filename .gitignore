@@ -30,3 +30,11 @@ MemoryCaptures/
 # OS
 Thumbs.db
 .DS_Store
+
+# Runtime generated images
+camera_feed/
+detections/
+vision_input/
+
+# Runtime data
+data/lane_data.json
