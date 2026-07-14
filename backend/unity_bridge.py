@@ -1,3 +1,5 @@
+from matplotlib.pylab import rint
+
 import traci
 import json
 import time
@@ -9,7 +11,7 @@ import os
 # ===============================
 
 SUMO_CONFIG = "sumo/simulation.sumocfg"
-
+LANE_FILE = "data/lane_data.json"
 
 # Start SUMO
 
@@ -44,6 +46,90 @@ while True:
     # Move SUMO one step
 
     traci.simulationStep()
+
+    # ===============================
+    # AI TRAFFIC SIGNAL CONTROLLER
+    # ===============================
+
+    # Create variables only once
+    if step == 0:
+
+        current_green = 0          # 0 = North/South, 2 = East/West
+        green_timer = 0
+
+        MIN_GREEN = 15             # seconds
+        MAX_GREEN = 45             # seconds
+
+    try:
+
+        with open(LANE_FILE, "r") as f:
+            lanes = json.load(f)
+
+        ns = lanes["north"] + lanes["south"]
+        ew = lanes["east"] + lanes["west"]
+
+        green_timer += 0.1
+
+        # ----------------------------------------
+        # Maximum Green Time
+        # ----------------------------------------
+
+        if green_timer >= MAX_GREEN:
+
+            if current_green == 0:
+
+                current_green = 2
+
+            else:
+
+                current_green = 0
+
+            traci.trafficlight.setPhase("J0", current_green)
+
+            green_timer = 0
+
+            print("Maximum Green Reached")
+            print("Switching Signal")
+
+        # ----------------------------------------
+        # Minimum Green Time Passed
+        # ----------------------------------------
+
+        elif green_timer >= MIN_GREEN:
+
+            # Priority Difference
+
+            if current_green == 0:
+
+                # East-West much larger?
+
+                if ew > ns * 1.30:
+
+                    current_green = 2
+
+                    traci.trafficlight.setPhase("J0", 2)
+
+                    green_timer = 0
+
+                    print("AI -> EAST/WEST GREEN")
+
+            else:
+
+                # North-South much larger?
+
+                if ns > ew * 1.30:
+
+                    current_green = 0
+
+                    traci.trafficlight.setPhase("J0", 0)
+
+                    green_timer = 0
+
+                print("AI -> NORTH/SOUTH GREEN")
+
+    except Exception as e:
+
+        print("AI Controller:", e)
 
 
     cars = []

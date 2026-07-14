@@ -1,17 +1,9 @@
 import traci
-import cv2
-import numpy
-import pandas
-import streamlit
 
-print("============================")
-print("AI Traffic System Setup Test")
-print("============================")
+traci.start(["sumo-gui", "-c", "sumo/simulation.sumocfg"])
 
-print("SUMO TraCI : OK")
-print("OpenCV     : OK")
-print("NumPy      : OK")
-print("Pandas     : OK")
-print("Streamlit  : OK")
+print(traci.trafficlight.getIDList())
+logic = traci.trafficlight.getAllProgramLogics("J0")
 
-print("\nSetup Successful 🚦")
+print(logic)
+traci.close()

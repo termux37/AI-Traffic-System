@@ -1,5 +1,6 @@
 import os
 import cv2
+import time
 import json
 import shutil
 from ultralytics import YOLO
@@ -82,28 +83,36 @@ def process_camera(camera_name):
     return count
 
 
-# --------------------------
-# Process all cameras
-# --------------------------
 
-for camera in CAMERAS:
+# ==========================================
+# CONTINUOUS AI LOOP
+# ==========================================
 
-    lane_data[camera] = process_camera(camera)
+print("\nStarting Continuous AI Detection...\n")
 
+while True:
 
-# --------------------------
-# Save JSON
-# --------------------------
+    lane_data = {}
 
-with open(
-    "data/lane_data.json",
-    "w"
-) as f:
+    for camera in CAMERAS:
 
-    json.dump(
-        lane_data,
-        f,
-        indent=4
-    )
+        lane_data[camera] = process_camera(camera)
 
-print("\nLane data saved successfully.")
+    with open(
+        "data/lane_data.json",
+        "w"
+    ) as f:
+
+        json.dump(
+            lane_data,
+            f,
+            indent=4
+        )
+
+    print("--------------------------------")
+    print("Lane Data Updated")
+    print(lane_data)
+    print("--------------------------------")
+
+    # Update every 2 seconds
+    time.sleep(2)
