@@ -1,8 +1,33 @@
 # AI-Based Intelligent Traffic Management System
 
-An AI-powered Intelligent Traffic Management System developed as a Artificial Intelligence and Machine Learning project. The system combines Artificial Intelligence, Computer Vision, Traffic Simulation, and a Digital Twin environment to optimize traffic signal timings based on real-time vehicle density.
+> **Research & Development Project**
+>
+> An AI-powered intelligent traffic management system utilizing Computer Vision, Digital Twin technology, and Adaptive Traffic Signal Control for smart city applications.
 
-The project utilizes SUMO for traffic simulation, Unity 3D as the digital twin, YOLOv8 for vehicle detection, Python for backend processing, Streamlit for dashboard visualization, and TraCI for communication between SUMO and Python.
+The AI-Based Intelligent Traffic Management System is designed to optimize traffic flow by integrating Artificial Intelligence, Computer Vision, Traffic Simulation, and Digital Twin technology. The system dynamically adjusts traffic signal timings based on real-time vehicle density, improving traffic efficiency while reducing congestion.
+
+The project utilizes SUMO for traffic simulation, Unity 3D as the Digital Twin environment, YOLOv8 for real-time vehicle detection, Python for backend processing, Streamlit for dashboard visualization, and TraCI for communication between the simulation and the AI controller.
+
+> **Notice**
+>
+> This repository is published solely for academic demonstration and portfolio purposes.
+>
+> The source code, algorithms, software architecture, documentation, models, and associated files are protected under an **All Rights Reserved** license.
+>
+> No permission is granted to copy, reproduce, modify, distribute, compile, execute, or use this software, in whole or in part, without prior written permission from the author.
+
+---
+
+# Project Overview
+
+This project demonstrates the implementation of an intelligent traffic management system capable of:
+
+- Detecting vehicles using Artificial Intelligence
+- Estimating traffic density in real time
+- Dynamically controlling traffic signals
+- Simulating a smart city intersection
+- Visualizing traffic flow using a Digital Twin
+- Displaying live traffic information through a dashboard
 
 ---
 
@@ -14,36 +39,27 @@ The project utilizes SUMO for traffic simulation, Unity 3D as the digital twin, 
 - SUMO Traffic Simulation
 - Unity 3D Digital Twin
 - Four Virtual CCTV Cameras
-- Live Vehicle Detection using YOLOv8
+- Real-Time Vehicle Detection using YOLOv8
 - Lane-wise Vehicle Counting
 - Adaptive Traffic Signal Timing
 - Minimum and Maximum Green Time Control
 - Unity-SUMO Synchronization
 - Python-TraCI Communication
-- Streamlit Live Dashboard
-- Real-Time JSON Data Exchange
-- Git & GitHub Version Control
-
-## Currently Under Development
-
-- Region of Interest (ROI) Based Lane Detection
-- Red Light Violation Detection
-- Automatic Number Plate Recognition (ANPR)
-- Vehicle Database Integration
-- Insurance Verification
-- Pollution Certificate Verification
-- Automatic Fine Generation
-- Traffic Analytics and Reports
+- Streamlit Dashboard
+- Live Traffic Monitoring
+- JSON-based Data Exchange
+- Git Version Control
+- GitHub Repository
 
 ---
 
 # Current Project Status
 
-## Completed
+## Completed Modules
 
-- SUMO Traffic Simulation
+- Traffic Simulation Environment
 - Unity Digital Twin
-- Python Bridge
+- Python-SUMO Communication
 - Adaptive AI Controller
 - YOLO Vehicle Detection
 - Four Virtual CCTV Cameras
@@ -51,23 +67,42 @@ The project utilizes SUMO for traffic simulation, Unity 3D as the digital twin, 
 - Live Dashboard
 - GitHub Repository
 
-Current Progress: Approximately 90%
+## Development Status
+
+✔ Functional Prototype Completed
+
+✔ Adaptive AI Signal Controller Implemented
+
+✔ Active Development Continues
 
 ---
 
 # Technologies Used
 
-- Python 3.12
+## Programming Languages
+
+- Python
 - C#
-- SUMO 1.25.0
-- Unity 6
+
+## Artificial Intelligence
+
 - YOLOv8
+- PyTorch
 - OpenCV
-- PyTorch CUDA
-- Streamlit
-- SQLite
+
+## Simulation
+
+- SUMO
 - TraCI
-- JSON
+
+## Visualization
+
+- Unity 3D
+- Streamlit
+
+## Development Tools
+
+- Visual Studio Code
 - Git
 - GitHub
 
@@ -78,15 +113,15 @@ Current Progress: Approximately 90%
 ## Minimum
 
 - Windows 10/11 (64-bit)
-- Intel Core i5 10th Gen / AMD Ryzen 5
+- Intel Core i5 (10th Generation) or AMD Ryzen 5
 - 16 GB RAM
 - NVIDIA GTX 1650 (4 GB VRAM)
-- 20 GB SSD Storage
+- SSD Storage
 
 ## Recommended
 
 - Windows 11 (64-bit)
-- AMD Ryzen 7 7840HS / Intel Core i7
+- AMD Ryzen 7 / Intel Core i7
 - 32 GB DDR5 RAM
 - NVIDIA RTX 3050 (6 GB VRAM) or Higher
 - NVMe SSD
@@ -94,163 +129,23 @@ Current Progress: Approximately 90%
 
 ---
 
-# Software Requirements
+# Software Used
 
 - Microsoft Windows 11
 - Python 3.12
-- Unity Hub
-- Unity 6 (6000.0.5f1)
+- Unity 6
 - SUMO 1.25.0
-- Git
 - Visual Studio Code
-- NVIDIA Graphics Driver
+- Git
+- GitHub
 - CUDA Enabled PyTorch
 
 ---
 
-# Python Libraries
-
-Install the required libraries:
-
-```bash
-pip install ultralytics torch torchvision opencv-python numpy pillow streamlit
-```
-
-Built-in Modules Used:
-
-- os
-- json
-- shutil
-- sqlite3
-- time
-
----
-
-# Installation Guide
-
-## 1. Clone the Repository
-
-```bash
-git clone https://github.com/termux37/AI-Traffic-System.git
-```
-
----
-
-## 2. Enter Project Directory
-
-```bash
-cd AI-Traffic-System
-```
-
----
-
-## 3. Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Activate Virtual Environment
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
----
-
-## 4. Install Dependencies
-
-```bash
-pip install ultralytics torch torchvision opencv-python numpy pillow streamlit
-```
-
----
-
-## 5. Install SUMO
-
-Install SUMO Version 1.25.0 and ensure SUMO is added to the system PATH.
-
----
-
-## 6. Install Unity
-
-Install Unity Hub and Unity 6 Editor.
-
-Open the Unity project located inside the repository.
-
----
-
-## 7. Download YOLO Model
-
-The project uses
+# System Architecture
 
 ```
-yolov8n.pt
-```
-
-It will automatically download during the first execution if it is not already available.
-
----
-
-# Running the Project
-
-## Step 1
-
-Open the Unity Project.
-
-Press Play.
-
----
-
-## Step 2
-
-Run the AI Vision System
-
-```bash
-python backend/vision_ai.py
-```
-
----
-
-## Step 3
-
-Run the Unity Bridge
-
-```bash
-python backend/unity_bridge.py
-```
-
----
-
-## Step 4
-
-Run the Dashboard
-
-```bash
-streamlit run dashboard/app.py
-```
-
----
-
-## Step 5
-
-Observe
-
-- SUMO Simulation
-- Unity Digital Twin
-- Live CCTV Cameras
-- Vehicle Detection
-- AI Traffic Signal Control
-- Dashboard
-
----
-
-# Project Architecture
-
-```
-Unity CCTV Cameras
+Virtual CCTV Cameras
           │
           ▼
 YOLOv8 Vehicle Detection
@@ -268,7 +163,7 @@ SUMO Traffic Simulation
 Unity Digital Twin
           │
           ▼
-Streamlit Dashboard
+Live Dashboard
 ```
 
 ---
@@ -279,72 +174,54 @@ Streamlit Dashboard
 
 2. Detect vehicles using YOLOv8.
 
-3. Count vehicles in each lane.
+3. Count vehicles present in each lane.
 
 4. Calculate traffic density for:
+   - North–South Direction
+   - East–West Direction
 
-- North + South
-- East + West
+5. Apply Adaptive Traffic Signal Logic:
+   - Maintain minimum green time.
+   - Prevent unnecessary signal switching.
+   - Compare traffic density.
+   - Switch signals only when required.
+   - Enforce maximum green time to avoid starvation.
 
-5. Apply Adaptive Signal Control:
+6. Update traffic signals in SUMO.
 
-- Maintain Minimum Green Time.
-- Prevent frequent switching.
-- Switch signals based on traffic density.
-- Enforce Maximum Green Time.
+7. Synchronize signal state with Unity.
 
-6. Update traffic lights in SUMO.
-
-7. Synchronize Unity.
-
-8. Update Dashboard.
+8. Update dashboard with live information.
 
 9. Repeat continuously.
 
 ---
 
-# Project Directory
+# Project Modules
 
-```
-AI-Traffic-System/
-
-backend/
-    vision_ai.py
-    unity_bridge.py
-    ai_controller.py
-
-dashboard/
-    app.py
-
-sumo/
-
-unity/
-
-camera_feed/
-
-vision_input/
-
-detections/
-
-data/
-
-README.md
-```
+- AI Traffic Signal Controller
+- Vehicle Detection Module
+- Unity Digital Twin
+- SUMO Traffic Simulator
+- Dashboard Module
+- Data Communication Module
+- Traffic Analytics Module
 
 ---
 
-# Future Improvements
+# Future Scope
 
-- ROI-Based Vehicle Detection
-- Automatic Number Plate Recognition
+- Region of Interest (ROI) Based Lane Detection
+- Automatic Number Plate Recognition (ANPR)
+- Traffic Violation Detection
+- Automatic Fine Generation
 - Vehicle Registration Database
 - Insurance Verification
 - Pollution Certificate Verification
-- Automatic Challan/Fine Generation
 - Emergency Vehicle Priority
-- Cloud Dashboard
-- Real CCTV Integration
-- Multi-Junction Traffic Management
+- Cloud-Based Monitoring
+- Multi-Intersection Traffic Management
+- Smart City Integration
 
 ---
 
@@ -352,14 +229,41 @@ README.md
 
 **Nithin John Regi**
 
+Bachelor of Technology (B.Tech)
+
+Robotics and Automation Engineer
+
+Artificial Intelligence | Machine Learning | Computer Vision | Robotics | Autonomous Systems
+
+GitHub: https://github.com/termux37
+
 ---
 
-## License
+# License
 
 Copyright © 2026 Nithin John Regi
 
-All Rights Reserved.
+**All Rights Reserved.**
 
-This repository is provided for viewing and academic demonstration purposes only.
+This repository is published exclusively for academic evaluation, research demonstration, and portfolio purposes.
 
-No permission is granted to copy, modify, distribute, or reuse the source code without prior written permission from the author.
+The source code, software architecture, algorithms, documentation, images, models, datasets, and all associated files remain the intellectual property of the author.
+
+Without prior written permission from the copyright holder, **no individual or organization is permitted to:**
+
+- Copy or reproduce this project
+- Modify the source code
+- Redistribute any part of this repository
+- Publish this project elsewhere
+- Create derivative works
+- Use the implementation commercially
+- Re-upload or mirror this repository
+- Use any portion of the code in another project
+
+Unauthorized use, reproduction, modification, or distribution may constitute copyright infringement and may result in legal action.
+
+For licensing, collaboration, or permission requests, please contact the author.
+
+---
+
+**© 2026 Nithin John Regi. All Rights Reserved.**
