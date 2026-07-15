@@ -1,6 +1,6 @@
 # AI-Based Intelligent Traffic Management System
 
-An AI-powered Intelligent Traffic Management System developed as a B.Tech Robotics and Automation project. The system combines Artificial Intelligence, Computer Vision, Traffic Simulation, and a Digital Twin environment to optimize traffic signal timings based on real-time vehicle density.
+An AI-powered Intelligent Traffic Management System developed as a Artificial Intelligence and Machine Learning project. The system combines Artificial Intelligence, Computer Vision, Traffic Simulation, and a Digital Twin environment to optimize traffic signal timings based on real-time vehicle density.
 
 The project utilizes SUMO for traffic simulation, Unity 3D as the digital twin, YOLOv8 for vehicle detection, Python for backend processing, Streamlit for dashboard visualization, and TraCI for communication between SUMO and Python.
 
@@ -348,12 +348,18 @@ README.md
 
 ---
 
-# License
-
-This project was developed for academic purposes as part of the Bachelor of Technology (B.Tech) in Robotics and Automation.
-
----
-
 # Author
 
 **Nithin John Regi**
+
+---
+
+## License
+
+Copyright © 2026 Nithin John Regi
+
+All Rights Reserved.
+
+This repository is provided for viewing and academic demonstration purposes only.
+
+No permission is granted to copy, modify, distribute, or reuse the source code without prior written permission from the author.
